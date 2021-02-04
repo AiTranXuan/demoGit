@@ -3,23 +3,9 @@ import React, { Component } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import { inject, observer, } from 'mobx-react'
 
-import ChangeTypeCompare from './navbar/ChangeTypeCompare';
-import NavbarCompareCar from './navbar/NavbarCompareCar';
-import { Navigation } from 'react-native-navigation';
-import { color } from '@config';
-
 @inject('OnApp')
 @observer
 export default class CompareCar extends Component {
-    clickLeftButton = () => {
-        Navigation.pop(this.props.componentId);
-    }
-
-    changeType = () => {
-        const { OnApp } = this.props;
-        OnApp.showTypeSelected()
-    };
-
     clickItem = (item) => {
         const { OnApp } = this.props;
         OnApp.setTypeSelected(item)
@@ -65,9 +51,6 @@ export default class CompareCar extends Component {
                                         />
                                     }
                                 </Table>
-                                <View style={styles.a4}>
-                                    <Text style={styles.a5}>{'Thông tin chung'}</Text>
-                                </View>
                                 <ScrollView
                                     keyboardShouldPersistTaps='handled'
                                     scrollEnabled={false}
@@ -120,13 +103,6 @@ export default class CompareCar extends Component {
 }
 
 const styles = StyleSheet.create({
-    a7: { borderColor: '#C1C0B9' },
-    a6: { flexDirection: 'row', flex: 1 },
-    a5: { color: 'black', fontWeight: 'bold', fontSize: 15, },
-    a4: { justifyContent: 'center', width: '100%', height: 40, paddingHorizontal: 10, borderBottomWidth: 0.5, borderBottomColor: color.borderNavbar },
-    a3: { borderColor: color.borderNavbar },
-    a2: { flex: 1, },
-    a1: { flex: 1, width: '100%', },
     container: { flex: 1, width: '100%', flexDirection: 'row', backgroundColor: 'transparent', },
     // header: { height: 30, },
     // textHeader: { textAlign: 'center', color: 'white', fontSize: 11, },

@@ -143,11 +143,6 @@ export default class BottomView extends Component {
                         onPress={this.clickCloseCompare}
                         activeOpacity={1}
                         style={styles.v4}>
-                        <FastImage
-                        resizeMode='contain'
-                        tintColor='#fff'
-                            style={styles.v5}
-                            source={Icons.ic_close} />
                     </TouchablePreventDouble>
                 </TouchablePreventDouble>
                 :
