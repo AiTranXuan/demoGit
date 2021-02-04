@@ -2,12 +2,6 @@ import { Col, RowTop, Table, TableWrapper, } from '@react-native-table-component
 import React, { Component } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import { inject, observer, } from 'mobx-react'
-
-import ChangeTypeCompare from './navbar/ChangeTypeCompare';
-import NavbarCompareCar from './navbar/NavbarCompareCar';
-import { Navigation } from 'react-native-navigation';
-import { color } from '@config';
-
 @inject('OnApp')
 @observer
 export default class CompareCar extends Component {
